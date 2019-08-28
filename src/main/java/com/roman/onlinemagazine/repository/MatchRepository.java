@@ -1,4 +1,7 @@
 package com.roman.onlinemagazine.repository;
 
-public interface MatchRepository {
+import com.roman.onlinemagazine.model.Match;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MatchRepository extends JpaRepository<Match, Long> {
 }

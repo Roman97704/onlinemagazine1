@@ -9,12 +9,12 @@ import java.sql.Time;
 import java.util.List;
 
 @Entity
+@Table(name = "MATCH_TABLE")
 public class Match {
 
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment",strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Time time;
     private Date date;

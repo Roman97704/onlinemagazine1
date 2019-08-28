@@ -7,16 +7,14 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "BET_TABLE")
 public class Bet {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment",strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private BigDecimal sum;
     private Timestamp timestamp;
-
-
 
     @ManyToOne(optional = false,cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
@@ -76,7 +74,7 @@ public class Bet {
                 "id=" + id +
                 ", sum=" + sum +
                 ", timestamp='" + timestamp + '\'' +
-                ", match='" + match + '\'' +
+//                ", match='" + match + '\'' +
                 '}';
     }
 }
